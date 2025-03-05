@@ -18,7 +18,7 @@ const Login = () => {
             setIsSigningIn(true);
             try {
                 await doSignInWithEmailAndPassword(email, password);
-                window.location.href = "https://law-files-chatbot-nzjiwmxfuzgpsnwzbepqhf.streamlit.app/";
+                window.location.href = "https://fmain-app.onrender.com";
             } catch (err) {
                 setIsSigningIn(false);
             }
@@ -31,16 +31,10 @@ const Login = () => {
         if (!isSigningIn) {
             setIsSigningIn(true);
             try {
-                const result = await doSignInWithGoogle();
-                if (result.user) {
-                    // Successful login
-                    window.location.href = "https://law-files-chatbot-nzjiwmxfuzgpsnwzbepqhf.streamlit.app/";
-                } else {
-                    setErrorMessage("Failed to sign in with Google");
-                    setIsSigningIn(false);
-                }
+                await doSignInWithGoogle();
+                // Redirect to the target page after successful sign-in
+                window.location.href = "https://fmain-app.onrender.com";
             } catch (err) {
-                setErrorMessage(err.message || "Failed to sign in with Google");
                 setIsSigningIn(false);
             }
         }

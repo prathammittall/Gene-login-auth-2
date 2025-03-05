@@ -19,7 +19,7 @@ const Register = () => {
             setIsRegistering(true);
             try {
                 await doCreateUserWithEmailAndPassword(email, password);
-                window.location.href = "https://lawgic-login-auth.vercel.app/";
+                window.location.href = "https://gene-omega.vercel.app/home";
             } catch (err) {
                 setIsRegistering(false);
                 setErrorMessage("Registration failed. Please try again.");
