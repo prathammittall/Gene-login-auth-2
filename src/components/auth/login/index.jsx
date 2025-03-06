@@ -33,7 +33,7 @@ const Login = () => {
             try {
                 await doSignInWithGoogle();
                 // Redirect to the target page after successful sign-in
-                window.location.href = "https://fmain-app.onrender.com";
+                window.location.href = "https://hackathon-app-yfiq.onrender.com/";
             } catch (err) {
                 setIsSigningIn(false);
             }
